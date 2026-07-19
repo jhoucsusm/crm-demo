@@ -1,6 +1,6 @@
 # Campus CRM Demo
 
-This is a tiny CRM-themed project for an introductory Codex lesson.
+This is a tiny CRM-themed project.
 
 Students can understand the whole project in a few minutes:
 
@@ -21,7 +21,7 @@ Start by showing the GitHub repository and opening the three main files. Then as
 Example prompt:
 
 ```text
-This is a beginner-friendly CRM demo for first-year students.
+This is a beginner-friendly CRM demo.
 
 Please add a simple "Next follow-up date" field to each contact.
 
@@ -41,6 +41,3 @@ Requirements:
 - Count how many contacts are in each status.
 - Save contacts in `localStorage` so they remain after refresh.
 
-## Teaching Point
-
-The goal is not to trust AI automatically. The goal is to ask for a small change, inspect the diff, test the page, and decide whether the change is correct.
