@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Campus CRM Demo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <p class="eyebrow">Freshman coding demo</p>
+      <h1>Campus CRM</h1>
+    </div>
+    <p class="subtitle">A tiny customer relationship manager for a student club.</p>
+  </header>
+
+  <main class="layout">
+    <section class="panel form-panel" aria-labelledby="add-contact-title">
+      <h2 id="add-contact-title">Add a Contact</h2>
+      <form id="contact-form">
+        <label>
+          Name
+          <input id="name-input" type="text" placeholder="Jordan Lee" required>
+        </label>
+
+        <label>
+          Role
+          <input id="role-input" type="text" placeholder="Prospective member" required>
+        </label>
+
+        <label>
+          Status
+          <select id="status-input">
+            <option value="New">New</option>
+            <option value="Contacted">Contacted</option>
+            <option value="Interested">Interested</option>
+            <option value="Follow up">Follow up</option>
+          </select>
+        </label>
+
+        <label>
+          Note
+          <textarea id="note-input" rows="4" placeholder="Met at the club fair. Interested in volunteering."></textarea>
+        </label>
+
+        <button type="submit">Add Contact</button>
+      </form>
+    </section>
+
+    <section class="panel list-panel" aria-labelledby="contacts-title">
+      <div class="section-heading">
+        <div>
+          <h2 id="contacts-title">Contacts</h2>
+          <p id="contact-count">0 contacts</p>
+        </div>
+        <label class="filter">
+          Filter
+          <select id="filter-input">
+            <option value="All">All</option>
+            <option value="New">New</option>
+            <option value="Contacted">Contacted</option>
+            <option value="Interested">Interested</option>
+            <option value="Follow up">Follow up</option>
+          </select>
+        </label>
+      </div>
+
+      <div id="contact-list" class="contact-list" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
