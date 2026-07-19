@@ -161,6 +161,13 @@ button:hover {
   color: var(--muted);
 }
 
+.follow-up {
+  margin-bottom: 8px;
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
 .note {
   margin-bottom: 0;
 }
