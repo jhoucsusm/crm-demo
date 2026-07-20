@@ -129,8 +129,15 @@ button:hover {
   margin-bottom: 18px;
 }
 
+.contact-controls {
+  display: grid;
+  grid-template-columns: minmax(180px, 240px) minmax(140px, 180px);
+  gap: 12px;
+}
+
+.search,
 .filter {
-  min-width: 180px;
+  min-width: 0;
 }
 
 .contact-list {
@@ -197,7 +204,7 @@ button:hover {
     grid-template-columns: 1fr;
   }
 
-  .filter {
-    min-width: 0;
+  .contact-controls {
+    grid-template-columns: 1fr;
   }
 }

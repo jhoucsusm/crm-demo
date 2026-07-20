@@ -54,16 +54,23 @@
           <h2 id="contacts-title">Contacts</h2>
           <p id="contact-count">0 contacts</p>
         </div>
-        <label class="filter">
-          Filter
-          <select id="filter-input">
-            <option value="All">All</option>
-            <option value="New">New</option>
-            <option value="Contacted">Contacted</option>
-            <option value="Interested">Interested</option>
-            <option value="Follow up">Follow up</option>
-          </select>
-        </label>
+        <div class="contact-controls">
+          <label class="search">
+            Search names
+            <input id="search-input" type="search" placeholder="Search by name">
+          </label>
+
+          <label class="filter">
+            Filter
+            <select id="filter-input">
+              <option value="All">All</option>
+              <option value="New">New</option>
+              <option value="Contacted">Contacted</option>
+              <option value="Interested">Interested</option>
+              <option value="Follow up">Follow up</option>
+            </select>
+          </label>
+        </div>
       </div>
 
       <div id="contact-list" class="contact-list" aria-live="polite"></div>
