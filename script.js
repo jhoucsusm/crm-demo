@@ -25,20 +25,25 @@ const roleInput = document.querySelector("#role-input");
 const statusInput = document.querySelector("#status-input");
 const noteInput = document.querySelector("#note-input");
 const filterInput = document.querySelector("#filter-input");
+const searchInput = document.querySelector("#search-input");
 const contactList = document.querySelector("#contact-list");
 const contactCount = document.querySelector("#contact-count");
 
 function renderContacts() {
   const selectedStatus = filterInput.value;
+  const searchTerm = searchInput.value.trim().toLowerCase();
   const visibleContacts = contacts.filter((contact) => {
-    return selectedStatus === "All" || contact.status === selectedStatus;
+    const matchesStatus = selectedStatus === "All" || contact.status === selectedStatus;
+    const matchesName = contact.name.toLowerCase().includes(searchTerm);
+
+    return matchesStatus && matchesName;
   });
 
   contactCount.textContent = `${visibleContacts.length} contact${visibleContacts.length === 1 ? "" : "s"}`;
   contactList.innerHTML = "";
 
   if (visibleContacts.length === 0) {
-    contactList.innerHTML = `<p class="empty-state">No contacts match this filter.</p>`;
+    contactList.innerHTML = `<p class="empty-state">No contacts match your search or filter.</p>`;
     return;
   }
 
@@ -86,9 +91,11 @@ form.addEventListener("submit", (event) => {
   contacts.unshift(newContact);
   form.reset();
   filterInput.value = "All";
+  searchInput.value = "";
   renderContacts();
 });
 
 filterInput.addEventListener("change", renderContacts);
+searchInput.addEventListener("input", renderContacts);
 
 renderContacts();
